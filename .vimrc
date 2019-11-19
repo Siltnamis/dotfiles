@@ -4,9 +4,6 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -30,6 +27,8 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+"YCM
+"let g:clang_complete_macros=1
 
 set backspace=2
 set t_Co=256
@@ -39,14 +38,8 @@ set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=0
-"set cursorline
 set laststatus=2
 
-let g:clang_complete_macros=1
-"colorscheme molokai
-"colorscheme jellybeans
-"colorscheme twilight
-"colorscheme darkblue
 colorscheme slatemod
 
 "disable bel stuff
@@ -98,17 +91,10 @@ inoremap <silent><A-s> <esc>:e %:p:s,.h$,.x123x,:s,.cpp$,.h,:s,.x123x$,.cpp,<CR>
 "syntax keyword cppSTLtype local_persist internal_var internal_function global_var constant_var r32 r64 ubyte uint ulong i8 u8 i32 u32 i64 u64 i16 u16 b32
 syntax on;
 
-no <down> ddp
-"no <left> <Nop>
-"no <right> <Nop>
-no <up> ddkP
-"ino <down> <Nop>
-"ino <left> <Nop>
-"ino <right> <Nop>
-"vno <down> <Nop>
-"ino <up> <Nop>
-"vno <left> <Nop>
-"vno <right> <Nop>
-"vno <down> <Nop>
-"vno <up> <Nop>
+"clipboard
+ino <C-v> <Esc>"+p
+vn <C-c> "+y
+
+no <A-down> ddp
+no <A-up> ddkP
 
